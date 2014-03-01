@@ -1,0 +1,20 @@
+#!/bin/bash
+
+cp /usr/local/etc/minecraft/craftbukkit.jar /data/
+
+if [ ! -f /data/opts.txt ]
+then
+    cp /usr/local/etc/minecraft/opts.txt /data/
+fi
+
+if [ ! -f /data/white-list.txt ]
+then
+    cp /usr/local/etc/minecraft/white-list.txt /data/
+fi
+
+if [ ! -f /data/server.properties ]
+then
+    cp /usr/local/etc/minecraft/server.properties /data/
+fi
+
+/usr/bin/supervisord
